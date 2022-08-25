@@ -39,6 +39,7 @@ async function login(req, res, next) {
       { userId: newuser.userId, role: newuser.role },
       process.env.ACCESS_TOKEN_SECRET
     );
+    res.cookie("access_token", token); //Sets name = express
 
     return Responses.success(res, "logged in Successfully", {
       role: user.role,

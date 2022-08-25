@@ -9,7 +9,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as speakeasy from "speakeasy";
 import hbs from "nodemailer-express-handlebars";
-import createUserModel from "../../util/ResponseCreator.js";
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
@@ -176,10 +175,11 @@ async function register(req, res, next) {
       code: otp,
       userId: userid,
     });
-    return response.success(res, "please Verify Your email to continue", {
-      access_token: accessToken,
-      refresh_token: refreshToken,
-    });
+    return response.success(
+      res,
+      "please Verify Your email to continue",
+      "please Verify Your email to continue"
+    );
   } catch (err) {
     return next(err);
   }
