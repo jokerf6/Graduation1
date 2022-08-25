@@ -9,6 +9,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as speakeasy from "speakeasy";
 import hbs from "nodemailer-express-handlebars";
+import createUserModel from "../../util/ResponseCreator.js";
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
@@ -93,7 +94,6 @@ const validateBody = (body) => {
 
 async function register(req, res, next) {
   try {
-    console.log(req.body);
     const { user } = req.models;
     const validateError = validateBody(req.body);
     if (validateError.error) {
@@ -105,7 +105,6 @@ async function register(req, res, next) {
     }
     const { firstName, lastName, email, password, confirmpassword } =
       validateError.value;
-    console.log(firstName);
     const check = await user.findOne({
       where: {
         email,
@@ -126,6 +125,7 @@ async function register(req, res, next) {
       email,
       password: hashPassword,
     });
+    console.log(newuser.role);
     const accessToken = jwt.sign(
       { userId: newuser.userId, role: newuser.role },
       process.env.ACCESS_TOKEN_SECRET,
@@ -177,7 +177,7 @@ async function register(req, res, next) {
       code: otp,
       userId: userid,
     });
-
+    console.log(newuser.userId);
     return response.success(res, "please Verify Your email to continue", {
       access_token: accessToken,
       refresh_token: refreshToken,

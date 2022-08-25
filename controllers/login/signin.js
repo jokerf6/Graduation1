@@ -38,20 +38,22 @@ async function login(req, res, next) {
         "Email not verified"
       );
     }
-    const accessToken = jwt.sign(
-      { userId: user.userId, role: user.role },
-      process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: 2 * 24 * 60 * 60 }
+    // const accessToken = jwt.sign(
+    //   { userId: newuser.userId, role: newuser.role },
+    //   process.env.ACCESS_TOKEN_SECRET,
+    //   { expiresIn: "2days" }
+    // );
+    // const refreshToken = jwt.sign(
+    //   { userId: newuser.userId, role: newuser.role },
+    //   process.env.REFRESH_TOKEN_SECRET,
+    //   { expiresIn: "2days" }
+    // );
+    const token = jwt.sign(
+      { userId: newuser.userId, role: newuser.role },
+      process.env.ACCESS_TOKEN_SECRET
     );
-    const refreshToken = jwt.sign(
-      { userId: user.userId, role: user.role },
-      process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: 2 * 24 * 60 * 60 }
-    );
+
     return Responses.success(res, "logged in Successfully", {
-      newuser,
-      access_token: accessToken,
-      refresh_token: refreshToken,
       role: user.role,
     });
   } catch (err) {

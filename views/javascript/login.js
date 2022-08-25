@@ -20,6 +20,7 @@ async function handleSubmit(e) {
     .then((json) => data(json));
 }
 var newdiv = false;
+var token;
 const form = document
   .getElementById("formSign")
   .addEventListener("submit", handleSubmit);
@@ -33,8 +34,7 @@ function data(json) {
     var element = document.getElementById("test");
     element.appendChild(tag);
   } else if (json.code === "Success") {
-    window.location.href = "dashboard.html";
+    window.location.href = "http://127.0.0.1:3000/dashboard";
   }
 }
-
 //*************************************** */

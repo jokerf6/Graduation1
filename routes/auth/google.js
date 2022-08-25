@@ -1,6 +1,5 @@
 import { Router } from "express";
-import Responses from "../util/response";
-import logincontrol from "../controllers/login/logincontrol";
+import logincontrol from "../../controllers/login/logincontrol";
 import passport from "passport";
 import GoogleStratgy from "passport-google-oauth2";
 const router = Router();

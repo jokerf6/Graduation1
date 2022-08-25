@@ -1,6 +1,5 @@
 import { Router } from "express";
-import Responses from "../util/response";
-import logincontrol from "../controllers/login/logincontrol";
+import logincontrol from "../../controllers/login/logincontrol";
 import path from "path";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);

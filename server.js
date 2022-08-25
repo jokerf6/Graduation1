@@ -3,8 +3,7 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import connection from "./util/connection.js";
-import Responses from "./util/response.js";
-import nodemailer from "nodemailer";
+import cookieParser from "cookie-parser";
 import SetupModels from "./models/setupmodels.js";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -12,27 +11,19 @@ import Cors from "cors";
 import passport from "passport";
 import FacebookStrategy from "passport-facebook";
 import GoogleStrategy from "passport-google-oauth2";
-import { init } from "./models/user";
-
+import jwt from "./util/jwt";
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
 
-import { Strategy, ExtractJwt } from "passport-jwt";
+import { Strategy} from "passport-jwt";
 import APIRouter from "./routes/APIRouter.js";
-import session from "express-session";
-import logincontrol from "./controllers/login/logincontrol.js";
-import { info } from "console";
 dotenv.config();
-process.env.ACCESS_TOKEN_SECRET;
-process.env.FACEBOOK_CLIENT_ID;
-process.env.FACEBOOK_CLIENT_SECRET;
 
 const app = express();
 
 app.use(Cors());
 
-const JwtStrategy = Strategy;
 try {
   await SetupModels(connection);
   await connection.authenticate();
@@ -43,9 +34,11 @@ try {
 }
 app.use(async (req, res, next) => {
   req.models = connection.models;
-
+  req.jwt = jwt;
   next();
 });
+app.use(cookieParser());
+
 app.set("view engine", "pug");
 app.use(express.static("public"));
 app.use(express.static(__dirname + "/public"));
@@ -76,7 +69,6 @@ passport.use(
   )
 );
 /******facebook***/
-let user;
 passport.use(
   new FacebookStrategy(
     {
