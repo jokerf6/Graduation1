@@ -16,7 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
 
-import { Strategy} from "passport-jwt";
+import { Strategy } from "passport-jwt";
 import APIRouter from "./routes/APIRouter.js";
 dotenv.config();
 
@@ -54,7 +54,6 @@ app.use("/", APIRouter);
 app.use("/assets", express.static("assets"));
 
 /******Google******/
-console.log(process.env.GOOGLE_CLIENT_ID);
 passport.use(
   new GoogleStrategy(
     {

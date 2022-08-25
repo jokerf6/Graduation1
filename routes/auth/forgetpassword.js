@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 const router = Router();
 
 router.get("/forgetpassword", (req, res) => {
-  res.sendFile(path.join(__dirname + "/../views/html/forgot.html"));
+  res.sendFile(path.join(__dirname + "../../../views/html/forgot.html"));
 });
 
 router.post("/forgetpassword", logincontrol.forgetpassword);

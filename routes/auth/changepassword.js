@@ -9,7 +9,9 @@ const __dirname = path.dirname(__filename);
 const router = Router();
 
 router.get("/changepassword/:id", (req, res) => {
-  res.sendFile(path.join(__dirname + "/../views/html/changepassword.html"));
+  res.sendFile(
+    path.join(__dirname + "../../../views/html/changepassword.html")
+  );
 });
 router.post("/changepassword/:id", logincontrol.changepassword);
 

@@ -1,13 +1,10 @@
 import Responses from "../../util/response";
 import nodemailer from "nodemailer";
-import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as speakeasy from "speakeasy";
 import hbs from "nodemailer-express-handlebars";
 const __filename = fileURLToPath(import.meta.url);
-
-const __dirname = path.dirname(__filename);
 
 async function forgetpassword(req, res, next) {
   try {

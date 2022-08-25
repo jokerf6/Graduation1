@@ -7,6 +7,6 @@ const __dirname = path.dirname(__filename);
 
 const router = Router();
 router.get("/", (req, res) => {
-  return res.redirect("../views/html/index.html");
+  return res.redirect("../../views/html/index.html");
 });
 export default router;

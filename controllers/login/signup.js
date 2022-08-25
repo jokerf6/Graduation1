@@ -125,7 +125,6 @@ async function register(req, res, next) {
       email,
       password: hashPassword,
     });
-    console.log(newuser.role);
     const accessToken = jwt.sign(
       { userId: newuser.userId, role: newuser.role },
       process.env.ACCESS_TOKEN_SECRET,
@@ -177,7 +176,6 @@ async function register(req, res, next) {
       code: otp,
       userId: userid,
     });
-    console.log(newuser.userId);
     return response.success(res, "please Verify Your email to continue", {
       access_token: accessToken,
       refresh_token: refreshToken,

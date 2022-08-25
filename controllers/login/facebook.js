@@ -1,5 +1,3 @@
-import passport from "passport";
-import GoogleStrategy from "passport-google-oauth2";
 import Responses from "../../util/response";
 import bcrypt from "bcrypt";
 
@@ -7,12 +5,10 @@ async function facebook(req, res, next) {
   try {
     const { user } = req.models;
 
-    console.log(req.user.name);
     const existingUser = await user.findOne({
       where: { email: req.user.emails[0].value },
     });
     // if user exists return the user
-    console.log(existingUser, " ", true);
     if (existingUser) {
       return Responses.success(res, "sign in", existingUser);
     }

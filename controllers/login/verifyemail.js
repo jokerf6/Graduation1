@@ -5,7 +5,6 @@ async function verifyemail(req, res, next) {
     const { resetcode, user } = req.models;
     const { code } = req.body;
     const { id } = req.params;
-    console.log(id);
     const valid = await resetcode.findOne({
       where: {
         userId: id,
@@ -16,7 +15,6 @@ async function verifyemail(req, res, next) {
         },
       ],
     });
-    console.log(valid);
     if (!valid) {
       return Responses.badRequest(
         res,

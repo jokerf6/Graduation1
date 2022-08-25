@@ -1,13 +1,11 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import Responses from "../../util/response";
-import connection from "../../util/connection";
 async function login(req, res, next) {
   try {
     const { user } = req.models;
 
     const { email, password } = req.body;
-    console.log(email, password);
     if (!email) {
       return Responses.badRequest(res, "400", " email cannt be empty ");
     }
@@ -21,7 +19,6 @@ async function login(req, res, next) {
     }
 
     const checkpassword = await bcrypt.compare(password, newuser.password);
-    console.log(checkpassword, " ", false);
 
     if (!checkpassword) {
       return Responses.badRequest(
@@ -38,16 +35,6 @@ async function login(req, res, next) {
         "Email not verified"
       );
     }
-    // const accessToken = jwt.sign(
-    //   { userId: newuser.userId, role: newuser.role },
-    //   process.env.ACCESS_TOKEN_SECRET,
-    //   { expiresIn: "2days" }
-    // );
-    // const refreshToken = jwt.sign(
-    //   { userId: newuser.userId, role: newuser.role },
-    //   process.env.REFRESH_TOKEN_SECRET,
-    //   { expiresIn: "2days" }
-    // );
     const token = jwt.sign(
       { userId: newuser.userId, role: newuser.role },
       process.env.ACCESS_TOKEN_SECRET

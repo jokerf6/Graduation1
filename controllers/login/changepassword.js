@@ -56,7 +56,6 @@ async function changepassword(req, res, next) {
   try {
     const { id } = req.params;
     const { user, resetcode } = req.models;
-    console.log(req.body);
 
     const validateError = validateBody(req.body);
     if (validateError.error) {
@@ -67,7 +66,6 @@ async function changepassword(req, res, next) {
       );
     }
     const { password, confirmpassword } = validateError.value;
-    console.log(password, " ", confirmpassword);
     if (password !== confirmpassword) {
       return Responses.badRequest(
         req,

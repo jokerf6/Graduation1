@@ -7,12 +7,10 @@ async function signingoogle(req, res, next) {
   try {
     const { user } = req.models;
 
-    console.log(req.user.email);
     const existingUser = await user.findOne({
       where: { email: req.user.email },
     });
     // if user exists return the user
-    console.log(existingUser, " ", true);
     if (existingUser) {
       return Responses.success(res, "sign in", existingUser);
     }
