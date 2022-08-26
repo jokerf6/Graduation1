@@ -5,6 +5,7 @@ import morgan from "morgan";
 import connection from "./util/connection.js";
 import cookieParser from "cookie-parser";
 import SetupModels from "./models/setupmodels.js";
+import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
 import Cors from "cors";
@@ -19,7 +20,6 @@ const __dirname = path.dirname(__filename);
 import { Strategy } from "passport-jwt";
 import APIRouter from "./routes/APIRouter.js";
 dotenv.config();
-
 const app = express();
 
 app.use(Cors());
@@ -38,7 +38,6 @@ app.use(async (req, res, next) => {
   next();
 });
 app.use(cookieParser());
-
 app.set("view engine", "pug");
 app.use(express.static("public"));
 app.use(express.static(__dirname + "/public"));
@@ -47,13 +46,15 @@ app.use(express.static(__dirname + "/views/javascript"));
 app.use(express.static(__dirname + "/videos"));
 app.use(express.static(__dirname + "/audios"));
 app.use(passport.initialize());
-app.use(bodyParser.urlencoded({ extended: true, limit: "100mb" }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(morgan("dev"));
 app.use("/", APIRouter);
 app.use("/assets", express.static("assets"));
+app.use(multer({ dest: "videos/" }).single("file"));
 
 /******Google******/
+app.post;
 passport.use(
   new GoogleStrategy(
     {

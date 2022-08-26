@@ -7,6 +7,10 @@ async function init(connection) {
       type: dataType.STRING,
       allowNull: false,
     },
+    comment: {
+      type: dataType.STRING,
+      allowNull: false,
+    },
   });
 }
 export { init };
