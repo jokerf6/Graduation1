@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 //********** */
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, __dirname + "../../videos");
+    cb(null, __dirname + "../../../videos");
   },
   filename: (req, file, cb) => {
     cb(null, new Date().toISOString() + "-" + file.originalname);
