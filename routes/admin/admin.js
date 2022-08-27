@@ -32,4 +32,5 @@ router.get("/addvideos", (req, res) => {
 });
 
 router.post("/addvideos", admincontrol.addvideos);
+
 export default router;
