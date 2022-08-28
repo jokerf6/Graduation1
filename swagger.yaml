@@ -3,8 +3,8 @@ info:
   title: "Accept API Documentation"
   version: "1.0.0"
   contact:
-    name: "Yousef Ashraf"
-    email: "yousefashraftawfiq@gmail.com"
+    name: "jokerf6"
+    email: "fhakem75@gmail.com"
 servers:
   - url: http://localhost:3000/
     description: "Local development server"
