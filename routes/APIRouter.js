@@ -11,12 +11,12 @@ import facebook from "./auth/facebook";
 import dashboard from "./dashboard/dashboard";
 import admin from "./admin/admin";
 import jwt from "../util/jwt.js";
-import YAML from "yamljs";
 import swaggerUi from "swagger-ui-express";
-
-const swaggerDocs = YAML.load("swagger.yaml");
+import swaggerFile from "../swagger_output.json" assert { type: "json" };
 
 const router = Router();
+router.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
 router.use("/", homepage);
 router.use("/", login);
 router.use("/", signup);
@@ -26,8 +26,7 @@ router.use("/signin/verifycode", verifychangepassword);
 router.use("/signup/verifyemail", verifyemail);
 router.use("/", google);
 router.use("/", facebook);
-router.use("/dashboard", jwt.authenticateWithJWT, dashboard);
 router.use("/admin", jwt.authadmin, admin);
-router.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+router.use("/", jwt.authenticateWithJWT, dashboard);
 
 export default router;
