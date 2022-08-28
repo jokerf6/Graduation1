@@ -5,7 +5,7 @@ function authenticateWithJWT(req, res, next) {
   const token = req.cookies.access_token;
 
   if (!token) {
-    return res.sendStatus(403);
+    return Responses.forbidden(res, "you canot access this page before login");
   }
   try {
     const data = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
@@ -13,7 +13,7 @@ function authenticateWithJWT(req, res, next) {
     req.userRole = data.role;
     return next();
   } catch {
-    return res.sendStatus(403);
+    return Responses.forbidden(res, "you canot access this page before login");
   }
 }
 function authadmin(req, res, next) {
