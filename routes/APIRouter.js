@@ -11,6 +11,7 @@ import facebook from "./auth/facebook";
 import dashboard from "./dashboard/dashboard";
 import admin from "./admin/admin";
 import jwt from "../util/jwt.js";
+//*** Swagger ***/
 import swaggerUi from "swagger-ui-express";
 import swaggerFile from "../swagger_output.json" assert { type: "json" };
 
@@ -28,5 +29,4 @@ router.use("/", google);
 router.use("/", facebook);
 router.use("/admin", jwt.authadmin, admin);
 router.use("/", jwt.authenticateWithJWT, dashboard);
-
 export default router;

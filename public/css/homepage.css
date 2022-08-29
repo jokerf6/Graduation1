@@ -44,13 +44,15 @@ body {
   text-align: center;
   max-width: 40%;
 }
+
+
 /*small*/
 @media (min-width: 768px) {
   .container {
     width: 750px;
   }
 }
-/*mediam*/
+/*medium*/
 @media (min-width: 992px) {
   .container {
     width: 970px;
@@ -67,6 +69,7 @@ body {
   background-color: rgb(0 0 0 /60%);
   background-size: cover;
   height: 100vh;
+  width: 390;
 }
 .landing2 {
   background-image: url(../images/back2.jpg);
@@ -129,6 +132,7 @@ body {
   height: 328px;
   background-color: rgb(0 0 0 / 40%);
   color: white;
+  width: 100vh;
 }
 .par h2 {
   font-size: 30px;
