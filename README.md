@@ -7,3 +7,9 @@
 # To start Project 
 * start server in xampp
 * npm run dev
+
+# To add updates 
+* Git add *
+* git commit -m "your edits"
+* Git pull
+* git push origin "your branch"
