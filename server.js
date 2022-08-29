@@ -17,11 +17,13 @@ const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
 
+import { Strategy } from "passport-jwt";
 import APIRouter from "./routes/APIRouter.js";
 dotenv.config();
 const app = express();
 
 app.use(Cors());
+
 try {
   await SetupModels(connection);
   await connection.authenticate();
@@ -35,7 +37,6 @@ app.use(async (req, res, next) => {
   req.jwt = jwt;
   next();
 });
-
 app.use(cookieParser());
 app.set("view engine", "pug");
 app.use(express.static("public"));

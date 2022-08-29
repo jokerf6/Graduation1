@@ -37,7 +37,7 @@
           <div class="input-box">
             <span class="details">email</span>
             <input
-              type="text"
+              type="email"
               placeholder="Enter your email"
               name="email"
               id="email"
@@ -47,21 +47,25 @@
           <div class="input-box">
             <span class="details">password</span>
             <input
-              type="text"
+              type="password"
               placeholder="Enter your password"
               name="password"
               id="password"
               required
+              minlength="6"
+              maxlength="12"
             />
           </div>
           <div class="input-box">
-            <span class="details">confirmpassword</span>
+            <span class="details">confirm password</span>
             <input
-              type="text"
+              type="password"
               placeholder="Confirm your password"
               id="confirmpassword"
               name="confirmpassword"
               required
+              minlength="6"
+              maxlength="12"
             />
           </div>
           <div id="test"></div>
