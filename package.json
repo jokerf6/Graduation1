@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --experimental-modules --es-module-specifier-resolution=node",
     "start": "node server.js",
-    "swagger-autogen": "node swagger.js"
+    "dev2": "node swagger.js"
   },
   "author": "",
   "license": "ISC",
