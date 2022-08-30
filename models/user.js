@@ -43,7 +43,7 @@ function init(connection) {
       type: dataType.STRING,
       allowNull: false,
       defaultValue:
-        "https://res.cloudinary.com/lms07/image/upload/v1645954589/avatar/6214b94ad832b0549b436264_avatar1645954588291.png",
+        "https://icon-library.com/images/avatar-icon-png/avatar-icon-png-8.jpg",
     },
   });
 }
