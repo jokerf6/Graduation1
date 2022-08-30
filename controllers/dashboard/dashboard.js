@@ -11,7 +11,7 @@ async function dahsboard(req, res) {
     attributes: ["video", "comment"],
   });
   const hackathons = await Hackathons.findAll({
-    attributes: ["name", "type", "date"],
+    attributes: ["name", "date", "canRegister"],
   });
   return Responses.success(res, "data", {
     User,

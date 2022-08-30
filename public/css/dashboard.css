@@ -6,6 +6,7 @@
   width: 100%;
   position: relative;
   padding-bottom: 20px;
+  background-color: white;
 }
 .nav1::after {
   content: "";
@@ -104,6 +105,7 @@
   flex-direction: row;
   padding-left: 190px;
   gap: 100px;
+  background-color: white;
 }
 .all {
   position: absolute;
@@ -112,7 +114,7 @@
   margin: 0;
   background-color: #f3f2ef;
   width: 100%;
-  height: 200px;
+  min-height: calc(100% - 200px);
 }
 .notdrp {
   margin-top: 15px;
