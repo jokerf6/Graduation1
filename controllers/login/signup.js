@@ -123,6 +123,7 @@ async function register(req, res, next) {
       lastName,
       email,
       password: hashPassword,
+      emailVerified: 1,
     });
     const accessToken = jwt.sign(
       { userId: newuser.userId, role: newuser.role },
@@ -136,50 +137,50 @@ async function register(req, res, next) {
     );
     delete newuser.dataValues.password;
 
-    let transporter = nodemailer.createTransport({
-      host: "smtp.titan.email",
-      port: 587,
-      secure: false,
-      auth: {
-        user: "noreply@orangedigitalcenteregypt.com",
-        pass: "AQYpcjBhp3",
-      },
-    });
-    const otp = speakeasy.totp({
-      digits: 6,
-      encoding: "base32",
-      step: 300,
-    });
+    // let transporter = nodemailer.createTransport({
+    //   host: "smtp.titan.email",
+    //   port: 587,
+    //   secure: false,
+    //   auth: {
+    //     user: "noreply@orangedigitalcenteregypt.com",
+    //     pass: "AQYpcjBhp3",
+    //   },
+    // });
+    // const otp = speakeasy.totp({
+    //   digits: 6,
+    //   encoding: "base32",
+    //   step: 300,
+    // });
 
-    const handlebarOptions = {
-      viewEngine: {
-        partialsDir: path.resolve("./views/"),
-        defaultLayout: false,
-      },
-      viewPath: path.resolve("./views/"),
-    };
-    transporter.use("compile", hbs(handlebarOptions));
-    let info = await transporter.sendMail({
-      from: "Accept <noreply@orangedigitalcenteregypt.com>",
-      to: email,
-      subject: "Email confirmation",
-      template: "verifyemail",
-      context: {
-        name: newuser.firstName + newuser.lastName, // replace {{name}} with Adebola
-        URL: otp, // replace {{company}} with My Company
-      },
-    });
-    const { resetcode } = req.models;
-    const userid = newuser.userId;
-    await resetcode.create({
-      code: otp,
-      userId: userid,
-    });
-    return response.success(
-      res,
-      "please Verify Your email to continue",
-      "please Verify Your email to continue"
-    );
+    // const handlebarOptions = {
+    //   viewEngine: {
+    //     partialsDir: path.resolve("./views/"),
+    //     defaultLayout: false,
+    //   },
+    //   viewPath: path.resolve("./views/"),
+    // };
+    // transporter.use("compile", hbs(handlebarOptions));
+    // let info = await transporter.sendMail({
+    //   from: "Accept <noreply@orangedigitalcenteregypt.com>",
+    //   to: email,
+    //   subject: "Email confirmation",
+    //   template: "verifyemail",
+    //   context: {
+    //     name: newuser.firstName + newuser.lastName, // replace {{name}} with Adebola
+    //     URL: otp, // replace {{company}} with My Company
+    //   },
+    // });
+    // const { resetcode } = req.models;
+    // const userid = newuser.userId;
+    // await resetcode.create({
+    //   code: otp,
+    //   userId: userid,
+    // });
+    // return response.success(
+    //   res,
+    //   "please Verify Your email to continue",
+    //   "please Verify Your email to continue"
+    // );
   } catch (err) {
     return next(err);
   }
