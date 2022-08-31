@@ -2,12 +2,14 @@
   padding-left: 80px;
   padding-right: 80px;
 }
+
 .nav1 {
   width: 100%;
   position: relative;
   padding-bottom: 20px;
   background-color: white;
 }
+
 .nav1::after {
   content: "";
   width: 100%;
@@ -19,19 +21,23 @@
 .text {
   padding-top: 20px;
 }
+
 .hr {
   padding: 1px;
   background-color: black;
 }
+
 .text h1 {
   display: inline;
   padding-right: 80px;
 }
+
 .icons {
   position: absolute;
   right: 0;
   top: 35%;
 }
+
 .search {
   font-size: large;
   padding: 15px 25px;
@@ -45,9 +51,11 @@
   padding: 0 20px;
   float: right;
 }
+
 .icons img:hover {
   cursor: pointer;
 }
+
 /* Dropdown Button */
 .dropbtn {
   margin-right: 40px;
@@ -107,6 +115,7 @@
   gap: 100px;
   background-color: white;
 }
+
 .all {
   position: absolute;
   left: 0;
@@ -116,6 +125,7 @@
   width: 100%;
   min-height: calc(100% - 200px);
 }
+
 .notdrp {
   margin-top: 15px;
   text-decoration: none;
@@ -123,11 +133,13 @@
   font-weight: 600;
   color: rgba(0, 0, 0, 0.9);
 }
+
 .boxes {
   padding: 20px 20px;
   position: absolute;
   right: 0;
 }
+
 .box {
   background-color: white;
   width: fit-content;
@@ -136,14 +148,17 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
 .box a {
   color: rgba(0, 0, 0, 0.9);
   font-size: 20px;
 }
+
 .box h4 {
   font-weight: 300;
   color: rgb(109, 107, 107);
 }
+
 .box a:hover {
   color: rgb(0, 45, 128);
 }
