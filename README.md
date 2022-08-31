@@ -10,6 +10,6 @@
 
 # To add updates 
 * Git add *
-* git commit -m "your edits"
+* git commit -m myedit
 * Git pull
-* git push origin "your branch"
+* git push origin edit
