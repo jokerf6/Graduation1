@@ -27,6 +27,14 @@ function data(json) {
   for (let i = 0; i < hacks.length; i += 1) {
     var box = document.createElement("div");
     box.classList.add("box");
+    box.innerHTML =
+      "<a href=#>" +
+      hacks[i].name +
+      " Round#" +
+      hacks[i].round +
+      "</a> <h4>" +
+      hacks[i].date +
+      "</h4>";
     var element = document.getElementById("boxes");
     element.appendChild(box);
   }

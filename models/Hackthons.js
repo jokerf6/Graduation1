@@ -6,14 +6,14 @@ async function init(connection) {
   connection.define(
     "Hackathons",
     {
-      id: {
+      hackthonId: {
         type: dataType.UUID,
         primaryKey: true,
         defaultValue: UUIDV4(),
       },
       name: {
         type: dataType.STRING,
-        allawNull: false,
+        allowNull: false,
       },
       type: {
         type: dataType.ENUM(
@@ -26,15 +26,20 @@ async function init(connection) {
           "data Analysis",
           "Cyper Security"
         ),
-        allawNull: false,
-      },
-      canRegister: {
-        type: dataType.BOOLEAN,
-        allawNull: false,
+        allowNull: false,
       },
       date: {
         type: dataType.DATE,
-        allawNull: false,
+        allowNull: false,
+      },
+      round: {
+        type: dataType.BIGINT,
+        allowNull: false,
+      },
+      finished: {
+        type: dataType.BOOLEAN,
+        allowNull: false,
+        defaultValue: 0,
       },
     },
     {

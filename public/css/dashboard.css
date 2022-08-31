@@ -123,3 +123,27 @@
   font-weight: 600;
   color: rgba(0, 0, 0, 0.9);
 }
+.boxes {
+  padding: 20px 20px;
+  position: absolute;
+  right: 0;
+}
+.box {
+  background-color: white;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.box a {
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 20px;
+}
+.box h4 {
+  font-weight: 300;
+  color: rgb(109, 107, 107);
+}
+.box a:hover {
+  color: rgb(0, 45, 128);
+}
