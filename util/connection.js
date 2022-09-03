@@ -10,3 +10,4 @@ const connection = new Sequelize({
   logging: false,
 });
 export { connection as default };
+
