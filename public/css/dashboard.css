@@ -134,7 +134,6 @@
   color: rgba(0, 0, 0, 0.9);
 }
 
-
 .boxes {
   padding: 20px 20px;
   position: absolute;
@@ -164,13 +163,7 @@
   color: rgb(0, 45, 128);
 }
 
-<<<<<<< HEAD
-
-@media only screen and (min-width : 1090px) and (max-width:1600px) {
-
-=======
 @media only screen and (min-width: 1090px) and (max-width: 1600px) {
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   .nav1 {
     width: 100%;
     position: relative;
@@ -201,14 +194,7 @@
     padding-top: 0;
     padding-left: 20px;
     padding-right: 20px;
-<<<<<<< HEAD
-
-
   }
-
-=======
-  }
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
 }
 
 @media only screen and (min-width: 0px) and (max-width: 320px) {
@@ -239,10 +225,6 @@
     border: 1px solid black;
     position: relative;
     left: 10px;
-<<<<<<< HEAD
-
-=======
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   }
 
   .icons img {
@@ -275,11 +257,6 @@
     color: rgba(0, 0, 0, 0.9);
   }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   .dropbtn {
     margin-right: 0px;
     background-color: #ffffff;
@@ -336,10 +313,6 @@
     border: 1px solid black;
     position: relative;
     left: 10px;
-<<<<<<< HEAD
-
-=======
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   }
 
   .icons img {
@@ -373,11 +346,6 @@
     color: rgba(0, 0, 0, 0.9);
   }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   .dropbtn {
     margin-right: 0px;
     background-color: #ffffff;
@@ -434,10 +402,6 @@
     border: 1px solid black;
     position: relative;
     left: 70px;
-<<<<<<< HEAD
-
-=======
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   }
 
   .icons img {
@@ -470,11 +434,6 @@
     color: rgba(0, 0, 0, 0.9);
   }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   .dropbtn {
     margin-right: 0px;
     background-color: #ffffff;
@@ -503,18 +462,9 @@
     position: relative;
     right: 150px;
   }
-<<<<<<< HEAD
-
-}
-
-
-@media only screen and (min-width: 583px) and (max-width: 700px) {
-
-=======
 }
 
 @media only screen and (min-width: 583px) and (max-width: 700px) {
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   .container {
     padding-left: 10px;
     padding-right: 10px;
@@ -593,17 +543,9 @@
     position: relative;
     right: 150px;
   }
-<<<<<<< HEAD
-
 }
 
 @media only screen and (min-width: 701px) and (max-width: 1089px) {
-
-=======
-}
-
-@media only screen and (min-width: 701px) and (max-width: 1089px) {
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   .container {
     padding-left: 10px;
     padding-right: 10px;
@@ -647,10 +589,6 @@
     position: relative;
     bottom: 20px;
     justify-content: center;
-<<<<<<< HEAD
-
-=======
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
   }
 
   .notdrp {
@@ -689,9 +627,4 @@
     position: relative;
     right: 150px;
   }
-<<<<<<< HEAD
-
 }
-=======
-}
->>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
