@@ -53,16 +53,28 @@ function data(json) {
     element.appendChild(box);
   }
   for (let i = 0; i < json.data.videos.length; i += 1) {
+<<<<<<< HEAD
+=======
+    console.log(json.data.videos[i]);
+>>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
     var video = document.createElement("div");
     video.classList.add("video");
     video.innerHTML =
       "<p>" +
       json.data.videos[i].comment +
       "</p><video width=95% height=100% controls>  <source src=" +
+<<<<<<< HEAD
       json.data.videos[i].video.slice(47) +
+=======
+      json.data.videos[i] +
+>>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
       "#t=0.6" +
       " type=video/mp4></video>";
     var element = document.getElementById("all");
     element.appendChild(video);
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a3ccd6e0a6dca0d233ffa3a26c77028c23c8d721
